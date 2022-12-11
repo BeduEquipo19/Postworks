@@ -1,0 +1,166 @@
+---
+title: "Postwork_6"
+author: "Nieves"
+date: "2022-12-07"
+output: github_document
+---
+
+#### Planteamiento del problema
+Supongamos que nuestro trabajo consiste en aconsejar a un cliente sobre
+como mejorar las ventas de un producto particular, y el conjunto de datos
+con el que disponemos son datos de publicidad que consisten en las ventas
+de aquel producto en 200 diferentes mercados, junto con presupuestos de
+publicidad para el producto en cada uno de aquellos mercados para tres
+medios de comunicación diferentes: TV, radio, y periódico. No es posible
+para nuestro cliente incrementar directamente las ventas del producto. Por
+otro lado, ellos pueden controlar el gasto en publicidad para cada uno de
+los tres medios de comunicación. Por lo tanto, si determinamos que hay una
+asociación entre publicidad y ventas, entonces podemos instruir a nuestro
+cliente para que ajuste los presupuestos de publicidad, y así
+indirectamente incrementar las ventas.
+
+#### Desarrollo
+Primero leemos los datos
+
+```{r}
+adv <- read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-06/data/advertising.csv")
+```
+
+Vemos el contenido de la tabla con ayuda de la función `head`
+
+```{r}
+head(adv)
+```
+
+Reordenamos los datos para tener la variable dependiente en la primer columna teniendo las siguientes consideraciones
+
+- Y: Sales (Ventas de un producto)
+- X1: TV (Presupuesto de publicidad en TV para el producto)
+- X2: Radio (Presupuesto de publicidad en Radio para el producto)
+- X3: Newspaper (Presupuesto de publicidad en Periódico para el producto) "
+
+
+```{r}
+col_order <- c("Sales", "TV", "Radio","Newspaper")
+```
+
+```{r}
+adv2 <- adv[, col_order]
+```
+
+Vemos como queda reordenada la tabla haciendo uso nuevamente de la función `head`
+
+```{r}
+head(adv2)
+```
+
+#### Obtenemos la matriz de correlación
+Por default la función `cor` emplea el método de Pearson, para el cual el rango de valores va de -1 a 1,
+con -1 y 1 indicando perfecta correlación negativa y positiva respectivamente. 
+
+
+```{r}
+round(cor(adv2),4)
+```
+
+De acuerdo a la tabla anterior las correlaciones entre Sales y TV  es grande, 
+mientras que para Sales y Radio es mediana de 0.3496 y para 
+Sales y Newspaper es pequeña.
+
+
+```{r}
+attach(adv2)
+```
+
+#### Visualizamos la relación entre pares de variables, de tal manera que podemos observar las correlaciones antes obtenidas con ayuda de la función `pairs`
+
+
+```{r}
+pairs(~ Sales + TV + Radio +  Newspaper, 
+      data = adv2, gap = 0.4, cex.labels = 1.5, col = 4)
+```
+
+#### Vamos a utilizar el modelo de regresión lineal para hacer recomendaciones al cliente, sobre cómo podría incrementar las ventas. El primer modelo incluye las tres variables independientes: TV, Radio y Newspaper.
+
+
+```{r}
+m1 <- lm(Sales ~ TV + Radio +  Newspaper)
+```
+
+Vemos el resultado del modelo con ayuda de la función `summary`
+
+```{r}
+summary(m1)
+```
+
+Las hipotesis para el modelo son: 
+
+1. Ho $\beta_i =0$ 
+2. Ha: $\beta_i != 0$
+
+R. Del resumen los p- values nos muestran que se rechaza la hipótesis nula, 
+Ho a favor de la hipótesis alternativa tanto para TV  y Radio. La R ajustada al cuadrado es 0.9011, en cuanto a la variable newspaper podemos aceptar la hipótesis nula y no nos proporciona mucha información, por lo que podemos probar el ajuste sin esta. Tambien observamos que por cada unidad que se incrementa en TV  las ventas suben 0.0544, mientras que por casa unidad que se incrementa la publicidad en radio las ventas suben 0.1070, en el caso del periódico el incremento es muy bajo.
+ 
+#### Para el segundo modelo quitamos la variable Newspaper
+
+```{r}
+m2 <- update(m1,~ .-Newspaper)
+```
+
+Vemos que resultados nos arroja
+
+```{r}
+summary(m2)
+```
+
+R. Para este modelo también se rechaza la hipótesis nula a favor de la hipótesis alternativa
+y el r cuadrado ajustado nos da de 0.9016, incremento en el ultimo dígito por lo que podríamos considerar que es mejor que el anterior, pero por muy poco.
+
+#### Para el ultimo modelo quitamos radio al segundo modelo, quedando únicamete TV
+
+```{r}
+m3 <- update(m2,~ .-Radio)
+```
+
+```{r}
+summary(m3)
+```
+
+R. En este caso el r ajustado disminuye considerablemente, por lo que podemos descartar 
+definitivamente este modelo"
+
+ Mi recomendación al cliente, seria que invierta mas presupuesto en publicidad para TV
+ y en radio en menor medida, dejando de fuera el periodico.
+ 
+ Ahora vamos a revisar los residuos estandarizados y ver si se comportan como una función normal para el modelo que mejor nos dio el ajuste, en base a la $R^
+2$ ajustada
+
+```{r}
+StanRes2 <- rstandard(m2) 
+```
+
+```{r}
+par(mfrow = c(2, 2))
+
+plot(TV, StanRes2, ylab = "Residuales Estandarizados")
+plot(Radio, StanRes2, ylab = "Residuales Estandarizados")
+qqnorm(StanRes2)
+qqline(StanRes2, col = "red")
+```
+
+R. como podemos ver la linea teórica coincide con los gráficos, lo que podemos 
+decir en un principio que la distribución se ve como una normal, para corroborar, hacemos la prueba `shapiro.test`
+
+
+```{r}
+shapiro.test(StanRes2)
+```
+
+1. Ho: La variable distribuye como una normal
+2. Ha: La variable no distribuye como una normal
+
+R. De esta prueba podemos concluir que la variable no se distribuye como una normal. 
+
+
+
+
