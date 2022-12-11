@@ -1,0 +1,134 @@
+---
+title: "Postwork7"
+author: "Equipo19"
+output: github_document
+---
+
+# Series de Tiempo
+
+### Postwork de la Sesion 7
+
+Objetivo
+
+-   Estimar modelos ARIMA y realizar predicciones
+
+Utilizando el siguiente vector numérico presentado debajo, realiza lo que se indica
+
+```{r}
+#Se convocan las librerias a usar
+library(ggplot2)
+library(ggfortify)
+```
+
+Se llama al archivo que contiene los datos y se transforma a un vector
+
+```{r}
+url = "https://raw.githubusercontent.com/beduExpert/Programacion-R-Santander-2022/main/Sesion-07/Data/global.txt"
+Global <- scan(url, sep="")
+```
+
+Se checa que la variable `Global` haya guardado de manera correcta los valores
+
+```{r}
+str(Global)
+```
+
+**1. Crea un objeto de serie de tiempo con los datos de Global. La serie debe ser mensual comenzando en Enero de**
+
+Se usa la función *ts* para convertir el vector `Global` a un objeto de la clase *ts*. Ya que es necesario que la información sea mensual, se usa el parámero *fr* (frecuencia) para definirlo mensual (12)
+
+```{r}
+Global.ts <- ts(Global, st = c(1856, 1), fr = 12)
+#Se comprueba el contenido de Global.ts y su clase
+str(Global.ts)
+class(Global.ts)
+```
+
+**2. Realiza una gráfica de la serie de tiempo anterior de 2006**
+
+Se procede a usar *autoplot* para graficar.
+
+```{r}
+autoplot(Global.ts, ts.colour = "blue", xlab = "Tiempo", ylab = "Temperatura en C")+ ggtitle("Serie de Temperatura Global")
+```
+
+Después de graficar, se observa como la varianza no es estable y que tiende a crecer para no regresar a su media, lo que sugiere un ts no estacionario.
+
+**3. Ahora realiza una gráfica de la serie de tiempo anterior, transformando a la primera diferencia**
+
+Al requerirse transformar la ts a la primer diferencia, es necesario el uso de la función *diff* y el resto de los argumentos quedan muy parecidos al anterior *autoplot*.
+
+```{r}
+autoplot(diff(Global.ts), ts.colour = "blue", xlab = "Tiempo", ylab = 
+           "Dif log-Serie") + ggtitle("Serie de Temperatura Global (log-transformada diferenciada de primer órden)")
+```
+
+Al aplicarse la primera diferencia, se puede observar ya un ts estacionario.
+
+**4. ¿Consideras que la serie es estacionaria en niveles o en primera diferencia?**
+
+Debido que en primera diferencia se logra obtener un compartamiento que asemeja un ts estacionario se concluye que la serie es estacionaria en primera diferencia.
+
+**5.  Con base en tu respuesta anterior, obtén las funciones de autocorrelación y autocorrelación parcial?**
+
+Se utiliza la funcion *acf* para producir la funcion de autocorrelación donde se puede observar como en pocos rezagos, la autocorrelación toca o pasa varias veces el límite crítico por lo que se concluye que hay cierto nivel dependencia rechazando la hipotesis nula.
+
+```{r}
+acf(diff(Global.ts))
+```
+
+A continuación se usa la función *pacf* para calcular la autocorrelación parcial. Al igual que le correlación total, en la gráfica se puede observar como, en pocos períodos de rezago, se excede el valor crítico debido al ruido del termino aleatorio.
+
+```{r}
+pacf(diff(Global.ts))
+```
+
+
+
+**6.  De acuerdo con lo observado en las gráficas anteriores, se sugiere un modelo ARIMA con AR(1), I(1) y MA desde 1 a 4 rezagos Estima los diferentes modelos ARIMA propuestos:**
+
+Para poder modelar arima se usa la función con el mismo nombre `arima`:
+
+```{r}
+arima(Global.ts, order = c(1, 1, 1))
+```
+Se pueden observar los coeficientes ar1 y ma1 pero realmente el que definirá el modelo a elegir es el coeficiente aic. Para este modelo es de -2278.26, se correrán los otros 3 con el fin de encontrar el aic de menor valor.
+
+
+```{r}
+arima(Global.ts, order = c(1, 1, 2))
+```
+
+
+```{r}
+arima(Global.ts, order = c(1, 1, 3))
+```
+
+
+```{r}
+arima(Global.ts, order = c(1, 1, 4))
+```
+
+Despues de observar los 4 modelos, se concluye que el arima(1,1,4) es el mejor debido a su aic es el menor de los 4 modelos propuestos.
+
+Se puede decir el comportamiento es el siguiente: 
+
+`x[t]=0.8704x[t-1]-1.403w[t-1]+0.3478w[t-2]+0.0053w[t-3]+0.06w[t-4]+w[t]`
+
+
+**7.  Con base en el criterio de Akaike, estima el mejor modelo ARIMA y realiza una predicción de 12 periodos (meses)**
+
+Como se menciona en la respuesta anterios, el mejor modelo ARIMA es el (1,1,4). Se guarda este modelo en la variable `fit`.
+
+```{r}
+fit <- arima(Global.ts, order = c(1, 1, 4))
+```
+
+Para realizar una predicción, se usa la función *predict* y debido a que es para un período de 12 meses, se agrega el 12 en el segundo parámetro. 
+
+```{r}
+(pr <- predict(fit, 12)$pred)
+```
+La función *predict* regresa un vector con la predicción de los siguientes 12 meses que sería de Enero de 2006 a Diciembre de 2006.
+
+
