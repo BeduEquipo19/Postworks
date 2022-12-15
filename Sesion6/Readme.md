@@ -1,4 +1,4 @@
-Postwork_6
+Regresión lineal y clasificación 
 ================
 Nieves
 2022-12-07
