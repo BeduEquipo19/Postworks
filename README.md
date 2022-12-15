@@ -2,7 +2,7 @@
 
 # Postworks
 
-En este respositorio estan integrados los postworks de la Fase 2, Módulo: Programación y estadística con R Santander 2022. 
+En este respositorio estan integrados los postworks de la Fase 2, Módulo: Programación y estadística con R Santander 2022, del equipo 19, cuyos integrantes son: 
 
 [Introducción a R](https://github.com/BeduEquipo19/Postworks/tree/main/Sesion1)
 
