@@ -1,7 +1,7 @@
 PROBABILIDAD Y FUNCIONES DE DISTRIBUCIÓN <br> Llamadas internacionales
 <br> Postwork Sesión 4
 ================
-Equipo 19
+Equipo 19,
 Diciembre 09, 2022
 
 **Objetivo**
