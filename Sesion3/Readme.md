@@ -1,6 +1,6 @@
 ANÁLISIS EXPLORATORIO DE DATOS <br> Postwork Sesión 3
 ================
-Equipo 19
+Equipo 19,
 Diciembre 09, 2022
 
 **Objetivo**
