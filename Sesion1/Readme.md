@@ -1,6 +1,6 @@
 Programación y estadística con R Santander 2022
 ================
-Equipo 19
+Equipo 19,
 October 14th, 2022
 
 
