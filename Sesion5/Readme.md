@@ -1,6 +1,6 @@
 Teorema del límite central e inferencia estadística
 ================
-Equipo_19
+Equipo 19,
 2022-12-07
 
 ## Objetivos
