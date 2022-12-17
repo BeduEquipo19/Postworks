@@ -1,20 +1,26 @@
 # 📈 Programación y estadística con R Santander 2022
 
-# 🎯: Postworks
+## 🎯 Objetivos del curso
 
-En este respositorio estan integrados los postworks de la Fase 2, Módulo: Programación y estadística con R Santander 2022, del equipo 19, cuyos integrantes son: 
+Realizar tareas de limpieza, manipulación y análisis de bases de datos utilizando el lenguaje de programación R, para después poder crear visualizaciones, predicciones y modelaje matemático, que permitirán transformar datos en información para mejorar la toma decisiones en las organizaciones.
 
--
+## 🧑‍🤝‍🧑 Integrantes
 
--
+En este respositorio estan integrados los 8 postworks de la Fase 2 del módulo **Programación y estadística con R Santander 2022** del equipo 19, cuyos integrantes son: 
 
--
+👷‍♀️ Marisol Mares
 
--
+👩‍🔬 Nieves Arias
 
--
+👨‍💻 Gabriel Fernández
 
+👨‍🏫 David Flores
 
+👨‍💼 Daniel Soto
+
+## 🎆 Postworks
+
+A continuación se presentan cada uno de los postworks trabajados por el equipo:
 
 [Introducción a R](https://github.com/BeduEquipo19/Postworks/tree/main/Sesion1)
 
