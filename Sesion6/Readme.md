@@ -1,6 +1,6 @@
 Regresión lineal y clasificación 
 ================
-Nieves
+Eqipo 19,
 2022-12-07
 
 #### Planteamiento del problema
