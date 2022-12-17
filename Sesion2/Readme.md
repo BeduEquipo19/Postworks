@@ -1,6 +1,6 @@
 Programación-R-Santander-2022
 ================
-Equipo 19
+Equipo 19,
 Dec 09, 2022
 
 # Manipulación y visualización de datos en R
