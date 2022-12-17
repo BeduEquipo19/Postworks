@@ -1,6 +1,6 @@
 Programación y estadística con R Santander 2022
 ================
-David Flores Granados
+Equipo 19
 October 14th, 2022
 
 
