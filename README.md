@@ -1,6 +1,6 @@
-# Programación y estadística con R Santander 2022
+# 📈 Programación y estadística con R Santander 2022
 
-# Postworks
+# 🎯: Postworks
 
 En este respositorio estan integrados los postworks de la Fase 2, Módulo: Programación y estadística con R Santander 2022, del equipo 19, cuyos integrantes son: 
 
