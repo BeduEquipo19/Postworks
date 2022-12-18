@@ -36,4 +36,4 @@ A continuación se presentan cada uno de los postworks trabajados por el equipo:
 
 [Series de tiempo](https://github.com/BeduEquipo19/Postworks/tree/main/Sesion7)
 
-[Proyecto final, integración de lo aprendido](https://github.com/BeduEquipo19/Postworks/tree/main/Sesion1)
+[Proyecto final, integración de lo aprendido](https://github.com/BeduEquipo19/Postworks/tree/main/Sesion8) 
