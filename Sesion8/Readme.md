@@ -878,12 +878,9 @@ tabla1<-CrossTable(dfclean$IA ,dfclean$area )
 
 ## 4. Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
 
-### La mayoría de las personas afirman que los hogares con menor
+Haciendo uso del siguiente párrafo hacemos una prueba de hipótesis.
 
-nivel socioeconómico tienden a gastar más en productos no saludables que
-las personas con mayores niveles socioeconómicos y que esto, entre otros
-determinantes, lleva a que un hogar presente cierta inseguridad
-alimentaria.”
+### La mayoría de las personas afirman que los hogares con menor nivel socioeconómico tienden a gastar más en productos no saludables que las personas con mayores niveles socioeconómicos y que esto, entre otros determinantes, lleva a que un hogar presente cierta inseguridad alimentaria.”
 
 Se establece un nivel de confianza de 99% para un nivel de significancia
 de 0.01
