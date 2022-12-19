@@ -16,7 +16,7 @@ En este respositorio estan integrados los 8 postworks de la Fase 2 del módulo *
 
 👨‍🏫 David Flores
 
-👨‍💼 Daniel Soto
+## VIDEO FINAL (https://drive.google.com/file/d/1o_dh5fz8zimopkTdOK3tkiCiCtWkEYZA/view?usp=sharing)
 
 ## 🎆 Postworks
 
