@@ -354,7 +354,7 @@ alns \lneq als \Leftrightarrow 1\lneq \frac{als}{alns} \Leftrightarrow 0\lneq ln
 Del mismo modo: 
 
  ```math 
-als \lneq alns \Leftrightarrow ln\_als-ln\_alns\lneq 0 \textrm{ y } als=alns \Leftrightarrow ln\_als-ln\_alns=0
+als \lneq alns \Leftrightarrow ln\_als-ln\_alns\lneq 0 \ \ \textrm{ y } \ \ als=alns \Leftrightarrow ln\_als-ln\_alns=0
 ``` 
 De acuerdo a lo anterior:
 
@@ -683,7 +683,7 @@ fit.cont(dfclean$dif_gastos)
 
 Como se observa, ninguna distribución encajó satisfactoriamente. No
 obstante, la mejor ajustada fue la distribución normal con parámetros
-$\mu =2.073147$ y $\sigma=1.042896$, que coinciden con la media y la
+$\mu=2.073147$ y $\sigma=1.042896$, que coinciden con la media y la
 desviación estándar de la muestra.
 
 ``` r
