@@ -342,8 +342,6 @@ cociente entre estos gastos, estos es:
 ```math 
 ln(\frac{als}{alns})=ln \_ als-ln \_ alns 
 ```
-
-
 ``` r
 dfclean$dif_gastos<-dfclean$ln_als-dfclean$ln_alns
 ```
