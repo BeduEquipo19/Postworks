@@ -346,10 +346,10 @@ ln(\frac{als}{alns})=ln \_ als-ln \_ alns
 dfclean$dif_gastos<-dfclean$ln_als-dfclean$ln_alns
 ```
 
-Así, si el gasto en alimentos saludables (alns) es mayor que el gasto en
+Luego, si el gasto en alimentos saludables (alns) es mayor que el gasto en
 alimentos no saludables (alns): alns<als entonces
  ```math 
-1<\frac{als}{alns} 
+alns<als \Rightarrow 1<\frac{als}{alns} \Rightarrow 0<ln(\frac{als}{alns})=ln\_als-ln\_alns
 ```                                        
 Ahora, se aplica el logaritmo natural en ambos 
 miembros de la desigualdad y se tiene que
