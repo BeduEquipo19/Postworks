@@ -346,10 +346,10 @@ ln(\frac{als}{alns})=ln \_ als-ln \_ alns
 dfclean$dif_gastos<-dfclean$ln_als-dfclean$ln_alns
 ```
 
-Luego, 
+Luego, \Rightarrow 1<\frac{als}{alns} \Rightarrow 0<ln(\frac{als}{alns})=ln\_als-ln\_alns
  ```math 
-alns<als
-```                                        
+ln(\frac{als}{alns})=ln \_ als-ln \_ alns 
+```                                       
 Ahora, se aplica el logaritmo natural en ambos 
 miembros de la desigualdad y se tiene que
  ```math 
