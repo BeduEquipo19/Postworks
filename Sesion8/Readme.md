@@ -354,7 +354,7 @@ alns \lneq als \Leftrightarrow 1\lneq \frac{als}{alns} \Leftrightarrow 0\lneq ln
 Del mismo modo: 
 
  ```math 
-als \lneq alns \Leftrightarrow ln\_als-ln\_alns\lneq 0 y als=alns \Leftrightarrow ln\_als-ln\_alns=0
+als \lneq alns \Leftrightarrow ln\_als-ln\_alns\lneq 0 \texrm{ y } als=alns \Leftrightarrow ln\_als-ln\_alns=0
 ``` 
 De acuerdo a lo anterior:
 
