@@ -346,9 +346,9 @@ ln(\frac{als}{alns})=ln \_ als-ln \_ alns
 dfclean$dif_gastos<-dfclean$ln_als-dfclean$ln_alns
 ```
 
-Luego, \Rightarrow 1<\frac{als}{alns} \Rightarrow 0<ln(\frac{als}{alns})=ln\_als-ln\_alns
+Luego, 
  ```math 
-alns \lneq als \Rightarrow
+alns \lneq als \Rightarrow 1\lneq \frac{als}{alns} \Rightarrow 0\lneq ln(\frac{als}{alns})=ln\_als-ln\_alns
 ```                                       
 Ahora, se aplica el logaritmo natural en ambos 
 miembros de la desigualdad y se tiene que
