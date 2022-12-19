@@ -348,17 +348,14 @@ dfclean$dif_gastos<-dfclean$ln_als-dfclean$ln_alns
 
 Luego, 
  ```math 
-alns \lneq als \Rightarrow 1\lneq \frac{als}{alns} \Rightarrow 0\lneq ln(\frac{als}{alns})=ln\_als-ln\_alns
+alns \lneq als \Leftrightarrow 1\lneq \frac{als}{alns} \Leftrightarrow 0\lneq ln(\frac{als}{alns})=ln\_als-ln\_alns
 ```                                       
-Ahora, se aplica el logaritmo natural en ambos 
-miembros de la desigualdad y se tiene que
- ```math 
-0<ln(\frac{als}{alns})=ln\_als-ln\_alns 
-```
-Del mismo modo: als<alns si
-y sólo si $ln\_als-ln\_alns<0$, y als=alns si y sólo si
-$ln\_als-ln\_alns=0$.
 
+Del mismo modo: 
+
+ ```math 
+als \lneq alns \Leftrightarrow ln\_als-ln\_alns\lneq 0 y als=alns \Leftrightarrow ln\_als-ln\_alns=0
+``` 
 De acuerdo a lo anterior:
 
 -   Si la diferencia es positiva entonces se gastó más en alimentos
