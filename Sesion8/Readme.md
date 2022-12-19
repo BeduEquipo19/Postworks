@@ -720,7 +720,7 @@ P(ln(10)\lneq ln\_ als-ln\_ alns)
 ```
 ya que
 ``` math
-alns\lneq \frac{als}{10} \Leftrightarrow 10\lneq \frac{als}{alns} \Leftrightarrow \ln(10)\lneq ln(\frac{als}{alns})=ln\_ als-ln\_ alns
+alns\lneq \frac{als}{10} \Leftrightarrow 10\lneq \frac{als}{alns} \Leftrightarrow ln(10)\lneq ln(\frac{als}{alns})=ln\_ als-ln\_ alns
 ```
 ``` r
 pnorm(q=log(10),mean=2.073147,sd=1.042896,lower.tail = FALSE)
@@ -770,7 +770,7 @@ promedio entre gastos de comidas saludables y no saludables (valores con
 logaritmo) sea menor que 1.
 
 Se tiene que la media se distribuye como una normal con media
-$\mu==2.073147$ y desviación estándar igual a $1.042896/\sqrt(100)$.
+$\mu=2.073147$ y desviación estándar igual a $1.042896/\sqrt(100)$.
 Luego se calcula $z=(1-1.042896)/0.1042896=-0.4113162$, y finalmente se
 obtiene la probabilidad:
 
