@@ -338,10 +338,7 @@ en:
 Con el objetivo de analizar el comportamiento de los gastos en alimentos
 saludables (als) con respecto a los gastos en alimentos no saludables
 (alns), se define una nueva variables resultado del logaritmo del
-cociente entre estos gastos, estos es:
-```math
-ln(\frac{als}{alns})=ln \_ als-ln \_ alns
-```
+cociente entre estos gastos, estos es: ```math ln(\frac{als}{alns})=ln \_ als-ln \_ alns```
 
 
 ``` r
