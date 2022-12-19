@@ -715,8 +715,8 @@ Con este modelo se pueden calcular probabilidades como las siguientes:
 
 La probabilidad de gastar menos de un décimo del gasto en comida
 saludable, en comida no saludable se calcula como
-$P(\ln(10)<ln\_als-ln\_alns)$, ya que
-$alns<\frac{als}{10} \leftrightarrow 10<\frac{als}{alns} \leftrightarrow \ln(10)<ln(\frac{als}{alns})=ln\_als-ln\_alns$.
+$P(\ln(10)\lneq ln\_als-ln\_alns)$, ya que
+$alns\lneq \frac{als}{10} \Leftrightarrow 10\lneq \frac{als}{alns} \Leftrightarrow \ln(10)\lneq ln(\frac{als}{alns})=ln\_als-ln\_alns$.
 
 ``` r
 pnorm(q=log(10),mean=2.073147,sd=1.042896,lower.tail = FALSE)
